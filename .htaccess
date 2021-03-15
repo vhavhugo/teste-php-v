@@ -1,0 +1,9 @@
+RewriteEngine on
+
+RewriteRule ^view/ - [L,NC]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)/$ loader.php?rota=$1 [L,QSA]
+RewriteRule ^(.*)$ loader.php?rota=$1 [L,QSA]
